@@ -1,13 +1,20 @@
 '''
-This script aims to convert coco formated bounding box labels csv file to Yolo format.
+This script aims to convert coco formated bounding box labels in a csv file to Yolo format.
 The script takes a csv and returns a new csv.
-The input csv is expected to have a column for the coco bbox annotations
-    where each row is expected to contain single string formated
-    as follow: '[x_min,y_min,width,height]',
-    for example: '[2272.17, 1685.498, 837.912, 636.74088]'.
-The output csv will contain all the columns in the input csv + yolo_bbox column
-    where each row will contain single string formated
-    as follow: '[x_center,y_center,bbox_width,bbox_height]'
+
+Structural assumptions:
+    The input csv is expected to have a column for the coco bbox annotations
+        where each row is expected to contain single string formated
+        as follow: '[x_min,y_min,width,height]',
+        for example: '[2272.17, 1685.498, 837.912, 636.74088]'.
+    The output csv will contain all the columns in the input csv + yolo_bbox column
+        where each row will contain single string formated
+        as follow: '[x_center,y_center,bbox_width,bbox_height]'
+        
+How to use:
+    1-  Review the structural assumptions of the coco csv file.
+    2-  Edit the Global variables to the files names.
+    3-  Run the code: $ python3 COCO2YOLO_CSV.py.
 '''
 
 import csv
